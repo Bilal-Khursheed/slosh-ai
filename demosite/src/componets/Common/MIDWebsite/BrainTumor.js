@@ -10,6 +10,7 @@ const SubStyle = {
 };
 
 class BrainTumor extends Component {
+  
   fileChangedHandler = event => {
     let file_size = event.target.files[0].size;
     if (file_size > 307200) {

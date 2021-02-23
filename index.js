@@ -26,6 +26,15 @@ app.use("/users", require("./backend/apis/statical_data/getAllstatus")); // this
 // port for local host
 const PORT = process.env.PORT || 3001;
 
+
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("demosite/build"));
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "demosite", "build", "index.html"));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
