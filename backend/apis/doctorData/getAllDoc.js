@@ -8,7 +8,7 @@ app.use(cors());
 // this is use to validate user
 app.get("/alldoctors", (req, res) => {
 
-    const allDoctor = `SELECT * FROM sql12393732.doctor where status=1;`;
+    const allDoctor = `SELECT * FROM bwgx3p22go7nsj8lsorn.doctor where status=1;`;
     connection.query(allDoctor, (err, results) => {
         if (err) {
             //will send error message if any

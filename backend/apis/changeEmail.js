@@ -13,12 +13,12 @@ app.get("/changeEmail", (req, res) => {
   console.log("old pass working" + oldPassword);
   console.log("role " + role);
 //DELETE FROM mid.patient WHERE Cnic = '';
-  const verifyDoctor = `SELECT * FROM sql12393732.doctor where email='${email}' and password='${oldPassword}';`;
-  const verifypatient = `SELECT * FROM sql12393732.patient where email='${email}' and password='${oldPassword}';`;
-  const verifyAdmin = `SELECT * FROM sql12393732.adminp where email='${email}' and password='${oldPassword}';`;
-  const changePatientEmail = `update sql12393732.patient set email='${NewEmail}' where email='${email}';`;
-  const changeDoctorEmail = `update sql12393732.doctor set password='${NewEmail}' where email='${email}';`;
-  const changeAdminEmail = `update sql12393732.adminp set password='${NewEmail}' where email='${email}';`;
+  const verifyDoctor = `SELECT * FROM bwgx3p22go7nsj8lsorn.doctor where email='${email}' and password='${oldPassword}';`;
+  const verifypatient = `SELECT * FROM bwgx3p22go7nsj8lsorn.patient where email='${email}' and password='${oldPassword}';`;
+  const verifyAdmin = `SELECT * FROM bwgx3p22go7nsj8lsorn.adminp where email='${email}' and password='${oldPassword}';`;
+  const changePatientEmail = `update bwgx3p22go7nsj8lsorn.patient set email='${NewEmail}' where email='${email}';`;
+  const changeDoctorEmail = `update bwgx3p22go7nsj8lsorn.doctor set password='${NewEmail}' where email='${email}';`;
+  const changeAdminEmail = `update bwgx3p22go7nsj8lsorn.adminp set password='${NewEmail}' where email='${email}';`;
   if (role == 1) {
     //for user(patient)
     connection.query(verifyAdmin, (err, results) => {

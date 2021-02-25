@@ -8,7 +8,7 @@ app.use(cors());
 // this is use to validate user
 app.get("/allPatient", (req, res) => {
   var Doctor_ID = req.query.Doctor_ID;
-  const allDoctor = `SELECT r.Report_ID, p.F_Name,  p.L_Name, p.Email, p.CNIC,p.State, p.Street,p.City,p.Country FROM sql12393732.report as r  INNER JOIN sql12393732.doctor as d  ON r.Doctor_ID=d.CNIC  INNER JOIN sql12393732.patient as p  ON r.Patient_ID=p.CNIC  where r.Doctor_ID='${Doctor_ID}';`;
+  const allDoctor = `SELECT r.Report_ID, p.F_Name,  p.L_Name, p.Email, p.CNIC,p.State, p.Street,p.City,p.Country FROM bwgx3p22go7nsj8lsorn.report as r  INNER JOIN bwgx3p22go7nsj8lsorn.doctor as d  ON r.Doctor_ID=d.CNIC  INNER JOIN bwgx3p22go7nsj8lsorn.patient as p  ON r.Patient_ID=p.CNIC  where r.Doctor_ID='${Doctor_ID}';`;
   connection.query(allDoctor, (err, results) => {
     if (err) {
       //will send error message if any
@@ -29,7 +29,7 @@ app.get("/allPatient", (req, res) => {
   // }
 });
 app.get("/allPatients", (req, res) => {
-  const allDoctor = `SELECT * FROM sql12393732.patient where status=1`;
+  const allDoctor = `SELECT * FROM bwgx3p22go7nsj8lsorn.patient where status=1`;
   connection.query(allDoctor, (err, results) => {
     if (err) {
       //will send error message if any

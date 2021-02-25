@@ -23,9 +23,9 @@ app.get("/approve", async (req, res) => {
   console.log("email : " + Id);
   console.log("role : " + role);
 
-  const updateUser = `update sql12393732.patient set status=true where email='${Id}';`;
-  const updateDoctor = `update sql12393732.doctor set status=true where email='${Id}';`;
-  const UpdateAdmin = `update sql12393732.adminp set status=true where email='${Id}';`;
+  const updateUser = `update bwgx3p22go7nsj8lsorn.patient set status=true where email='${Id}';`;
+  const updateDoctor = `update bwgx3p22go7nsj8lsorn.doctor set status=true where email='${Id}';`;
+  const UpdateAdmin = `update bwgx3p22go7nsj8lsorn.adminp set status=true where email='${Id}';`;
   if (role == 1) {
     connection.query(updateUser, async (err, results) => {
       if (err) {

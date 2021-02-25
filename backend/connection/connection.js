@@ -4,9 +4,9 @@ var mysql = require("mysql");
 //const connection = (async) => {
 var connection = mysql.createConnection({
   host: "sql12.freemysqlhosting.net",
-  user: "sql12393732",
+  user: "bwgx3p22go7nsj8lsorn",
   password: "vHMTdxdVPB",
-  database: "sql12393732",
+  database: "bwgx3p22go7nsj8lsorn",
 });
 //check the connection with database
 connection.connect(function (err) {

@@ -12,7 +12,7 @@ app.get("/checkcnic", (req, res) => {
   console.log("email" + CNIC);
 
   //   const verifyDoctor = `SELECT * FROM mid.doctor where email='${email}' and password='${oldPassword}';`;
-  const verifypatient = `SELECT * FROM sql12393732.patient where cnic='${CNIC}';`;
+  const verifypatient = `SELECT * FROM bwgx3p22go7nsj8lsorn.patient where cnic='${CNIC}';`;
   //   const verifyAdmin = `SELECT * FROM mid.adminp where email='${email}' and password='${oldPassword}';`;
   //   const PatientCnic= `update mid.patient set email='${NewEmail}' where email='${oldEmail}';`;
   //   const changeDoctorEmail= `update mid.doctor set password='${NewEmail}' where email='${oldEmail}';`;

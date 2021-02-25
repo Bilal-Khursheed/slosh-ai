@@ -11,7 +11,7 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: false }));
 
 app.get("/getStats", async (req, res) => {
-  const addReport = `select p.city , p.country , count(*) as total from sql12393732.patient as p inner join sql12393732.report as rep on rep.patient_ID = p.CNIC group by p.city;`;
+  const addReport = `select p.city , p.country , count(*) as total from bwgx3p22go7nsj8lsorn.patient as p inner join bwgx3p22go7nsj8lsorn.report as rep on rep.patient_ID = p.CNIC group by p.city;`;
   connection.query(addReport, (err, results) => {
     if (err) {
       console.log(err);

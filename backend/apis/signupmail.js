@@ -33,9 +33,9 @@ app.post("/add", async (req, res) => {
   console.log("name :" + L_Name);
   console.log("pass :" + Password);
   console.log("role :" + role);
-  const addUser = `INSERT INTO sql12393732.patient(cnic,f_name, l_name, Email,dob, Phone_no, Password, street, city, state, country, zip_code,status) VALUES ('${CNIC}', '${F_Name}','${L_Name}', '${Email}',${DOB},'${Phone_No}','${Password}', '${Address}', '${City}', '${State}', '${Country}', '${Zip_code}',${status});`;
-  const addAdmin = `INSERT INTO sql12393732.adminp(cnic,f_name, l_name, Email, Phone_no, Password, street, city, state, country, zip_code,status) VALUES ('${CNIC}', '${F_Name}','${L_Name}', '${Email}','${Phone_No}','${Password}', '${Address}', '${City}', '${State}', '${Country}', '${Zip_code}','${status}');`;
-  const addDoctor = `INSERT INTO sql12393732.doctor(cnic,f_name, l_name, Email, Phone_no, Password,status,hospital, street, city, state, country, zip_code) VALUES ('${CNIC}', '${F_Name}','${L_Name}', '${Email}','${Phone_No}','${Password}','${status}','${Hospital}', '${Address}', '${City}', '${State}', '${Country}', '${Zip_code}');`;
+  const addUser = `INSERT INTO bwgx3p22go7nsj8lsorn.patient(cnic,f_name, l_name, Email,dob, Phone_no, Password, street, city, state, country, zip_code,status) VALUES ('${CNIC}', '${F_Name}','${L_Name}', '${Email}',${DOB},'${Phone_No}','${Password}', '${Address}', '${City}', '${State}', '${Country}', '${Zip_code}',${status});`;
+  const addAdmin = `INSERT INTO bwgx3p22go7nsj8lsorn.adminp(cnic,f_name, l_name, Email, Phone_no, Password, street, city, state, country, zip_code,status) VALUES ('${CNIC}', '${F_Name}','${L_Name}', '${Email}','${Phone_No}','${Password}', '${Address}', '${City}', '${State}', '${Country}', '${Zip_code}','${status}');`;
+  const addDoctor = `INSERT INTO bwgx3p22go7nsj8lsorn.doctor(cnic,f_name, l_name, Email, Phone_no, Password,status,hospital, street, city, state, country, zip_code) VALUES ('${CNIC}', '${F_Name}','${L_Name}', '${Email}','${Phone_No}','${Password}','${status}','${Hospital}', '${Address}', '${City}', '${State}', '${Country}', '${Zip_code}');`;
   if (role === 1) {
     console.log("working in query");
     await connection.query(addDoctor, (err, results) => {

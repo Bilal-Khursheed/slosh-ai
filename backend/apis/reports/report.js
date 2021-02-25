@@ -13,7 +13,7 @@ app.use(bodyParse.urlencoded({ extended: false }));
 app.get("/getReport", async (req, res) => {
   const Report_ID = req.query.Report_ID;
 
-  const getReport = `SELECT r.Report_ID, r.Dated, r.type, r.result,  CONCAT(p.F_Name, " ", p.L_Name) as pname,p.DOB, CONCAT(d.F_Name, " ", d.L_Name) as dname FROM sql12393732.report as r  INNER JOIN sql12393732.doctor as d  ON r.Doctor_ID=d.CNIC  INNER JOIN sql12393732.patient as p  ON r.Patient_ID=p.CNIC  where Report_ID='${Report_ID}';`;
+  const getReport = `SELECT r.Report_ID, r.Dated, r.type, r.result,  CONCAT(p.F_Name, " ", p.L_Name) as pname,p.DOB, CONCAT(d.F_Name, " ", d.L_Name) as dname FROM bwgx3p22go7nsj8lsorn.report as r  INNER JOIN bwgx3p22go7nsj8lsorn.doctor as d  ON r.Doctor_ID=d.CNIC  INNER JOIN bwgx3p22go7nsj8lsorn.patient as p  ON r.Patient_ID=p.CNIC  where Report_ID='${Report_ID}';`;
   connection.query(getReport, (err, results) => {
     if (err) {
       console.log(err);
@@ -50,7 +50,7 @@ app.post("/addReport", async (req, res) => {
   console.log(Report_URL);
   console.log(" here is the iud", Patient_ID);
 
-  const addReport = `INSERT INTO sql12393732.report(Report_ID, Dated, Time, Report_URL, Doctor_ID, Patient_ID, type, result) VALUES ('${Report_ID}', '${Dated}','${Time}', '${Report_URL}','${Doctor_ID}','${Patient_ID}','${type}','${result}');`;
+  const addReport = `INSERT INTO bwgx3p22go7nsj8lsorn.report(Report_ID, Dated, Time, Report_URL, Doctor_ID, Patient_ID, type, result) VALUES ('${Report_ID}', '${Dated}','${Time}', '${Report_URL}','${Doctor_ID}','${Patient_ID}','${type}','${result}');`;
   connection.query(addReport, (err, results) => {
     if (err) {
       console.log(err);

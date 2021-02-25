@@ -12,8 +12,8 @@ app.get("/deletePD", (req, res) => {
   console.log(CNIC);
 
   //DELETE FROM mid.patient WHERE Cnic = '';
-  const deletePatient = `DELETE FROM sql12393732.patient WHERE Cnic = '${CNIC}';`;
-  const deleteDoctor = `DELETE FROM sql12393732.doctor WHERE Cnic = '${CNIC}';`;
+  const deletePatient = `DELETE FROM bwgx3p22go7nsj8lsorn.patient WHERE Cnic = '${CNIC}';`;
+  const deleteDoctor = `DELETE FROM bwgx3p22go7nsj8lsorn.doctor WHERE Cnic = '${CNIC}';`;
   //   const verifypatient = `SELECT * FROM mid.patient where email='${email}' and password='${oldPassword}';`;
   //   const verifyAdmin = `SELECT * FROM mid.adminp where email='${email}' and password='${oldPassword}';`;
   //   const changePatientEmail = `update mid.patient set email='${NewEmail}' where email='${email}';`;

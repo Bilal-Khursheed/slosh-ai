@@ -23,9 +23,9 @@ app.get("/reject", async (req, res) => {
   console.log("email : " + Id);
   console.log("role : " + role);
 
-  const updateUser = `DELETE FROM sql12393732.patient WHERE email='${Id}';`;
-  const updateDoctor = `DELETE FROM sql12393732.doctor WHERE email='${Id}';`;
-  const UpdateAdmin = `DELETE FROM sql12393732.adminp WHERE email='${Id}';`;
+  const updateUser = `DELETE FROM bwgx3p22go7nsj8lsorn.patient WHERE email='${Id}';`;
+  const updateDoctor = `DELETE FROM bwgx3p22go7nsj8lsorn.doctor WHERE email='${Id}';`;
+  const UpdateAdmin = `DELETE FROM bwgx3p22go7nsj8lsorn.adminp WHERE email='${Id}';`;
   if (role == 1) {
     connection.query(updateUser, async (err, results) => {
       if (err) {

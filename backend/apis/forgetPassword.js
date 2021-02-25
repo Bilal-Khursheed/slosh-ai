@@ -8,7 +8,7 @@ app.use(cors());
 
 app.get("/forgetPassword", (req, res) => {
     var cnic=res.query.CNIC;
-    const changePatientPass= `update sql12393732.patient set password='${newPassword}' where cnic='${cnic}';`;
-    const changeDoctorPass= `update sql12393732.doctor set password='${newPassword}' where email='${cnic}';`;
-    const changeAdminPass= `update sql12393732.adminp set password='${newPassword}' where email='${cnic}';`;
+    const changePatientPass= `update bwgx3p22go7nsj8lsorn.patient set password='${newPassword}' where cnic='${cnic}';`;
+    const changeDoctorPass= `update bwgx3p22go7nsj8lsorn.doctor set password='${newPassword}' where email='${cnic}';`;
+    const changeAdminPass= `update bwgx3p22go7nsj8lsorn.adminp set password='${newPassword}' where email='${cnic}';`;
 })

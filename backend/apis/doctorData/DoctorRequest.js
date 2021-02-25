@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 // this is use to validate user
 app.get("/alldoctorsReq", (req, res) => {
-  const allDoctor = `SELECT * FROM sql12393732.doctor where status=0;`;
+  const allDoctor = `SELECT * FROM bwgx3p22go7nsj8lsorn.doctor where status=0;`;
   connection.query(allDoctor, (err, results) => {
     if (err) {
       //will send error message if any

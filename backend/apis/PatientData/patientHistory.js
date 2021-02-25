@@ -11,15 +11,15 @@ app.get("/patientshistory", (req, res) => {
   const cnic = req.query.cnic;
   const role = req.query.role;
 
-  const patientReport2 = `SELECT * FROM sql12393732.report where Patient_ID=${cnic};`;
+  const patientReport2 = `SELECT * FROM bwgx3p22go7nsj8lsorn.report where Patient_ID=${cnic};`;
   const patientReport1 = `SELECT rp.Report_ID, CONCAT(dc.F_Name, '_',dc.L_Name) as Name, rp.Dated,rp.Report_URL,dc.Hospital
-  FROM sql12393732.report as rp
-  INNER JOIN sql12393732.doctor as dc
+  FROM bwgx3p22go7nsj8lsorn.report as rp
+  INNER JOIN bwgx3p22go7nsj8lsorn.doctor as dc
   ON rp.Doctor_ID=dc.CNIC where rp.Patient_ID=${cnic};`;
 
   const patientReport = `SELECT rp.Report_ID, CONCAT(dc.F_Name, '_',dc.L_Name) as Name, rp.Dated,rp.Report_URL,dc.Hospital
-  FROM sql12393732.report as rp
-  INNER JOIN sql12393732.doctor as dc
+  FROM bwgx3p22go7nsj8lsorn.report as rp
+  INNER JOIN bwgx3p22go7nsj8lsorn.doctor as dc
   ON rp.Doctor_ID=dc.CNIC where rp.Doctor_ID=${cnic};`;
   if (role == 3) {
     connection.query(patientReport1, (err, results) => {
