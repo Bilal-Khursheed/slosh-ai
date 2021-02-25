@@ -90,7 +90,7 @@ class Report extends Component {
     var res = localStorage.getItem("result");
     //var ress = JSON.parse(res);
     this.setState({ result: res });
-    console.log(res);
+    // console.log(res);
     var data2 = JSON.parse(data);
     var data3 = JSON.parse(data4);
 
@@ -100,16 +100,16 @@ class Report extends Component {
     var seconds = (time / 1000) % 60;
     var minutes = (time / (1000 * 60)) % 60;
     var hours = (time / (1000 * 60 * 60)) % 24;
-    console.log("tine is ", ~~hours, "hr/", ~~minutes, "min/", ~~seconds + "s");
+    // console.log("tine is ", ~~hours, "hr/", ~~minutes, "min/", ~~seconds + "s");
     var c_time = ~~hours + "hr" + ~~minutes + "min  " + ~~seconds + "s";
-    console.log("c time is " + c_time);
+    // console.log("c time is " + c_time);
     var datetime =
       newDate.getDate() +
       "/" +
       (newDate.getMonth() + 1) +
       "/" +
       newDate.getFullYear();
-    console.log(datetime);
+    // console.log(datetime);
     this.setState({ Date: datetime });
     //var detials=JSON.parse( data2.data)
     var i = "";
@@ -129,7 +129,7 @@ class Report extends Component {
       this.setState({ dName: Dname });
       this.setState({ Doctor_ID: data3.data[i].CNIC });
       Doctor_ID = data3.data[i].CNIC;
-      console.log("doctor id" + Doctor_ID);
+      // console.log("doctor id" + Doctor_ID);
     }
     //Report_ID, Dated, Time, Report_URL, Doctor_ID, Patient_ID
 
@@ -138,7 +138,7 @@ class Report extends Component {
     var type = this.state.type;
     var finalresult = res;
 
-    console.log(
+    // console.log(
       "here is th edata",
       Report_ID,
       "sajk",
@@ -160,7 +160,7 @@ class Report extends Component {
       })
       .then((res) => {
         if (res.status === 200) {
-          console.log("your data in stored in database");
+          // console.log("your data in stored in database");
           //alert(
           //   "Thanks for you Registration! your data is transferd to Admin will Aknowledge you by Email."
           // );
@@ -168,11 +168,11 @@ class Report extends Component {
         }
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
 
     //this.printDocument();
-    console.log("First this called");
+    // console.log("First this called");
   }
   handleChange = () => {
     // var data = localStorage.getItem("report");

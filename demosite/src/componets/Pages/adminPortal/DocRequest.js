@@ -10,15 +10,15 @@ class DocRequest extends Component {
     // var alldoctors = await allDocReq.allDocReq();
     // // var name=JSON.parse(alldoctors)
     // var length = JSON.stringify(alldoctors.names.length);
-    // console.log("data of the doctor" + length);
+    // // console.log("data of the doctor" + length);
     // var x;
     // var y = length;
-    console.log("working");
+    // console.log("working");
     await fetch(`users/alldoctorsReq`)
       .then((respone) => respone.json())
       .then((Result) => {
         if (Result.status == "Success") {
-          console.log("here is the length", Result.data.length);
+          // console.log("here is the length", Result.data.length);
 
           this.setState({
             AllRequests: Result.data,
@@ -29,7 +29,7 @@ class DocRequest extends Component {
 
     // if (this.state.v === 0) {
     //   for (x = 0; x < length; x++) {
-    //     console.log("working in for loop");
+    //     // console.log("working in for loop");
     //     $("#tabledata").prepend(
     //       `<tr><th scope="row">` +
     //         y +
@@ -61,7 +61,7 @@ class DocRequest extends Component {
     //     this.setState({ v: 1 });
     //   }
     // } else {
-    // console.log("not working");
+    // // console.log("not working");
     // }
     /* do {
       $("#tabledata").prepend(
@@ -72,7 +72,7 @@ class DocRequest extends Component {
   }
   Reject = async (e) => {
     var email = e.target.value;
-    //console.log("emialsi s", email);
+    //// console.log("emialsi s", email);
     await fetch(`users/reject?Id=${email}&&role=${2}`).then((res) => {
       if (res.status) {
         this.setState((prevState) => ({
@@ -85,7 +85,7 @@ class DocRequest extends Component {
   };
   Accept = async (e) => {
     var email = e.target.value;
-    //console.log("emialsi s", email);
+    //// console.log("emialsi s", email);
     await fetch(`users/approve?Id=${email}&&role=${2}`).then((res) => {
       if (res.status) {
         this.setState((prevState) => ({

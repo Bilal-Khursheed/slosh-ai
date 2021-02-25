@@ -11,9 +11,9 @@ var connection = mysql.createConnection({
 //check the connection with database
 connection.connect(function (err) {
   if(!err)
-  console.log('Database is connected!');
+   console.log('Database is connected!');
 else
-  console.log('Database not connected! : '+ JSON.stringify(err, undefined,2));
+   console.log('Database not connected! : '+ JSON.stringify(err, undefined,2));
 });
 
 

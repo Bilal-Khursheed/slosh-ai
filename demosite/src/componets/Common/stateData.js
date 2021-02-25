@@ -9,7 +9,7 @@ class GetAllDoc {
         var j = 0;
         var i;
         for (i in Result.data) {
-          console.log(Result.data[i].total);
+          // console.log(Result.data[i].total);
           data[j] = Result.data[i].total;
           lable[j] = Result.data[i].city;
           //this.setState({ cities: Result.data[i].city });
@@ -18,7 +18,7 @@ class GetAllDoc {
           j++;
         }
       });
-    console.log("here is the dta" + lable[1]);
+    // console.log("here is the dta" + lable[1]);
     user = {
       labels: ["hj", "jsavh"],
       datasets: [
@@ -45,7 +45,7 @@ class GetAllDoc {
       ],
     };
 
-    console.log("here is all data");
+    // console.log("here is all data");
     return [lable, data];
   }
 }

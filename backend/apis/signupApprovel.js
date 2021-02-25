@@ -20,8 +20,8 @@ app.get("/approve", async (req, res) => {
   // const Id = req.params.id;
   //const role = req.params.role;
   const { Id, role } = req.query;
-  console.log("email : " + Id);
-  console.log("role : " + role);
+  // console.log("email : " + Id);
+  // console.log("role : " + role);
 
   const updateUser = `update bwgx3p22go7nsj8lsorn.patient set status=true where email='${Id}';`;
   const updateDoctor = `update bwgx3p22go7nsj8lsorn.doctor set status=true where email='${Id}';`;
@@ -29,7 +29,7 @@ app.get("/approve", async (req, res) => {
   if (role == 1) {
     connection.query(updateUser, async (err, results) => {
       if (err) {
-        console.log(err);
+        // console.log(err);
         res.send(err);
       } else {
         res.status(200).json({
@@ -40,10 +40,10 @@ app.get("/approve", async (req, res) => {
   } else if (role == 2) {
     connection.query(updateDoctor, async (err, results) => {
       if (err) {
-        console.log(err);
+        // console.log(err);
         res.send(err);
       } else {
-        console.log("working");
+        // console.log("working");
         res.status(200).json({
           message: "doctor is Approved by you",
         });
@@ -52,7 +52,7 @@ app.get("/approve", async (req, res) => {
   } else if (role == 3) {
     connection.query(UpdateAdmin, async (err, results) => {
       if (err) {
-        console.log(err);
+        // console.log(err);
         res.send(err);
       } else {
         res.status(200).json({
@@ -92,11 +92,11 @@ app.get("/approve", async (req, res) => {
     html: htmll, // html body
   });
 
-  console.log("Message sent: %s", info.messageId);
+  // console.log("Message sent: %s", info.messageId);
   // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
   // Preview only available when sending through an Ethereal account
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 });
 
 module.exports = app;

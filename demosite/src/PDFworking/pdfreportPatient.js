@@ -31,7 +31,7 @@ class Report extends Component {
             Report_Data: Result.result,
           });
 
-          console.log(this.state.Report_Data);
+          // console.log(this.state.Report_Data);
         } else if (Result.message == "notfound") {
           alert("Report ID is not Found");
           this.setState({ navigate: true });
@@ -40,7 +40,7 @@ class Report extends Component {
     localStorage.clear();
 
     //this.printDocument();
-    console.log("First this called");
+    // console.log("First this called");
   }
   handleChange = () => {
     // var data = localStorage.getItem("report");

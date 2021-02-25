@@ -14,7 +14,7 @@ class GetEmail {
       for (i in data2.data) {
         email1 = data2.data[i].Email;
         cnic = data2.data[i].CNIC;
-        console.log(email1);
+        // console.log(email1);
         role = 1;
         return [email1, role,cnic];
       }
@@ -27,7 +27,7 @@ class GetEmail {
       for (i in data2.data) {
         email1 = data2.data[i].Email;
         cnic = data2.data[i].CNIC;
-        console.log(email1);
+        // console.log(email1);
         role = 2;
         return [email1, role,cnic];
       }
@@ -39,7 +39,7 @@ class GetEmail {
       for (i in data2.data) {
         email1 = data2.data[i].Email;
         cnic = data2.data[i].CNIC;
-        console.log(email1);
+        // console.log(email1);
         role = 3;
         return [email1, role,cnic];
       }

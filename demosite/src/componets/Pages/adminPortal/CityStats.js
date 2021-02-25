@@ -43,7 +43,7 @@ class CityStats extends Component {
           // this.setState({ count: Result.data[i].total });
         }
       });
-    console.log("count " + this.state.city2);
+    // console.log("count " + this.state.city2);
   }
   render() {
     const state = {

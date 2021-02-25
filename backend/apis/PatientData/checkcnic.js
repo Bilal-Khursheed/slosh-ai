@@ -9,7 +9,7 @@ app.use(cors());
 app.get("/checkcnic", (req, res) => {
   //get this concept from mosh on youtube (restapi)
   const CNIC = req.query.CNIC;
-  console.log("email" + CNIC);
+  // console.log("email" + CNIC);
 
   //   const verifyDoctor = `SELECT * FROM mid.doctor where email='${email}' and password='${oldPassword}';`;
   const verifypatient = `SELECT * FROM bwgx3p22go7nsj8lsorn.patient where cnic='${CNIC}';`;
@@ -19,10 +19,10 @@ app.get("/checkcnic", (req, res) => {
   //   const changeAdminEmail= `update mid.adminp set password='${NewEmail}' where email='${oldEmail}';`;
 
   connection.query(verifypatient, (err, results) => {
-    console.log("length" + results.length);
+    // console.log("length" + results.length);
     if (err) {
       //will send error message if any
-      console.log("data not working");
+      // console.log("data not working");
       res.send(err);
     } else if (results.length === 0) {
       return res.json({

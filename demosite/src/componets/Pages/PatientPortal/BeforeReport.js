@@ -9,7 +9,7 @@ class BeforeReport extends Component {
   };
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(" login e value", e.target.value);
+    // console.log(" login e value", e.target.value);
   };
   handleSubmit = () => {
     localStorage.setItem("ReportID", this.state.Report_ID);

@@ -8,7 +8,7 @@ class GetUserData {
     for (i in data2.data) {
       name = data2.data[i].F_Name;
       name += " " + data2.data[i].L_Name;
-      console.log(name);
+      // console.log(name);
     }
     return name;
   }
@@ -21,7 +21,7 @@ class GetUserData {
     for (i in data2.data) {
       name = data2.data[i].F_Name;
       name += " " + data2.data[i].L_Name;
-      console.log(name);
+      // console.log(name);
     }
     return name;
   }
@@ -34,7 +34,7 @@ class GetUserData {
     for (i in data2.data) {
       name = data2.data[i].F_Name;
       name += " " + data2.data[i].L_Name;
-      console.log(name);
+      // console.log(name);
     }
     return name;
   }

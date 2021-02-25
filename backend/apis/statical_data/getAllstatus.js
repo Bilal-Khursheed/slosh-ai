@@ -14,10 +14,10 @@ app.get("/getStats", async (req, res) => {
   const addReport = `select p.city , p.country , count(*) as total from bwgx3p22go7nsj8lsorn.patient as p inner join bwgx3p22go7nsj8lsorn.report as rep on rep.patient_ID = p.CNIC group by p.city;`;
   connection.query(addReport, (err, results) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
       res.send(err);
     } else {
-      console.log("Report data is recovered ");
+      // console.log("Report data is recovered ");
       res.json({ data: results });
     }
   });
@@ -27,10 +27,10 @@ app.get("/getstateStats", async (req, res) => {
   const addReport = `select p.state , p.country , count(*) as total from mid.patient as p inner join mid.report as rep on rep.patient_ID = p.CNIC group by p.state;`;
   connection.query(addReport, (err, results) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
       res.send(err);
     } else {
-      console.log("Report data is recovered ");
+      // console.log("Report data is recovered ");
       res.json({ data: results });
     }
   });

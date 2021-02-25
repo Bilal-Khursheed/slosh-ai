@@ -13,7 +13,7 @@ class DelPat extends Component {
       for (i in data2.data) {
         name=data2.data[i].fname;
         name += " "+data2.data[i].lname;
-        console.log(name);}
+        // console.log(name);}
 
         return (
             <div>

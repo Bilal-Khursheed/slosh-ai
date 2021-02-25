@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 // this is use to validate user
 app.get("/patientshistory", (req, res) => {
-  console.log("working");
+  // console.log("working");
   const cnic = req.query.cnic;
   const role = req.query.role;
 
@@ -25,7 +25,7 @@ app.get("/patientshistory", (req, res) => {
     connection.query(patientReport1, (err, results) => {
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
         return res.json({
@@ -42,7 +42,7 @@ app.get("/patientshistory", (req, res) => {
     connection.query(patientReport, (err, results) => {
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
         return res.json({

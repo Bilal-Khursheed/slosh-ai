@@ -9,9 +9,9 @@ app.use(cors());
 app.get("/changepass", (req, res) => {
   //get this concept from mosh on youtube (restapi)
   const { email, oldPassword, newPassword, role } = req.query;
-  console.log("email" + email);
-  console.log("old pass working" + oldPassword);
-  console.log("new pass working" + newPassword);
+  // console.log("email" + email);
+  // console.log("old pass working" + oldPassword);
+  // console.log("new pass working" + newPassword);
 
   const verifyDoctor = `SELECT * FROM bwgx3p22go7nsj8lsorn.doctor where email='${email}' and password='${oldPassword}';`;
   const verifypatient = `SELECT * FROM bwgx3p22go7nsj8lsorn.patient where email='${email}' and password='${oldPassword}';`;
@@ -22,10 +22,10 @@ app.get("/changepass", (req, res) => {
   if (role == 1) {
     //for user(patient)
     connection.query(verifyAdmin, (err, results) => {
-      console.log("length" + results.length);
+      // console.log("length" + results.length);
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
         return res.json({
@@ -50,10 +50,10 @@ app.get("/changepass", (req, res) => {
   } else if (role == 2) {
     // for doctor
     connection.query(verifyDoctor, (err, results) => {
-      console.log("length" + results.length);
+      // console.log("length" + results.length);
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
         return res.json({
@@ -78,10 +78,10 @@ app.get("/changepass", (req, res) => {
   } //end of else if outer
   else if (role == 3) {
     connection.query(verifypatient, (err, results) => {
-      console.log("length" + results.length);
+      // console.log("length" + results.length);
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
         return res.json({

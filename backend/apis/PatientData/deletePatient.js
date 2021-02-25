@@ -9,7 +9,7 @@ app.use(cors());
 app.get("/deletePD", (req, res) => {
   //get this concept from mosh on youtube (restapi)
   const CNIC = req.query.CNIC;
-  console.log(CNIC);
+  // console.log(CNIC);
 
   //DELETE FROM mid.patient WHERE Cnic = '';
   const deletePatient = `DELETE FROM bwgx3p22go7nsj8lsorn.patient WHERE Cnic = '${CNIC}';`;
@@ -22,10 +22,10 @@ app.get("/deletePD", (req, res) => {
 
   //for user(patient)
   connection.query(deletePatient, (err, results) => {
-    //console.log("length" + results.length);
+    //// console.log("length" + results.length);
     if (err) {
       //will send error message if any
-      console.log("data not working");
+      // console.log("data not working");
       res.send(err);
     } else {
       return res.json({
@@ -37,10 +37,10 @@ app.get("/deletePD", (req, res) => {
     } // end of inner else if
   }); /// end of first query run
   connection.query(deleteDoctor, (err, results) => {
-    // console.log("length" + results.length);
+    // // console.log("length" + results.length);
     if (err) {
       //will send error message if any
-      console.log("data not working");
+      // console.log("data not working");
       res.send(err);
     } else if (results.length === 0) {
       return res.json({

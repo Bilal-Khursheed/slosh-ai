@@ -79,14 +79,14 @@ class portal extends Component {
   //this is use to save data in states by getting name and there values
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(" login e value", e.target.value);
+    // console.log(" login e value", e.target.value);
     var Userdata = GetEmail.email();
     var email11 = Userdata[0];
-    console.log("emial is " + email11);
+    // console.log("emial is " + email11);
     this.setState({ role: Userdata[1] });
     this.setState({ email: email11 });
     //var Userdata=GetEmail.email()
-    //console.log("here is the mail from localstorage" + Userdata[0] +" and role is "+Userdata[1] );
+    //// console.log("here is the mail from localstorage" + Userdata[0] +" and role is "+Userdata[1] );
   };
   updateEmail = (e) => {
     const { email, newEmail, Epassword, role } = this.state;
@@ -101,32 +101,32 @@ class portal extends Component {
           Result.status === "DotorDeleted" ||
           Result.status === "PatientDeleted"
         ) {
-          console.log("Email is changed");
+          // console.log("Email is changed");
           alert("User is deleted");
         } else {
-          console.log("ID is not correct");
+          // console.log("ID is not correct");
           alert("User ID is not correct");
         }
       });
   };
   Changepassword = (e) => {
     const { email, oldPassword, newPassword, role } = this.state;
-    console.log(" data is " + email);
-    console.log(" data is " + oldPassword);
-    console.log(" data is " + newPassword);
-    console.log(" data is " + role);
+    // console.log(" data is " + email);
+    // console.log(" data is " + oldPassword);
+    // console.log(" data is " + newPassword);
+    // console.log(" data is " + role);
 
     changepass.changePassword(email, oldPassword, newPassword, role);
   };
   // openPDF(x) {
-  //   console.log("working in open pdf" + x);
+  //   // console.log("working in open pdf" + x);
   //   window.open("https://www.w3schools.com");
   // }
   patienthistory = async (e) => {
     var patientHistory = await PatientHistory.getpatientHistory();
     // var name=JSON.parse(alldoctors)
     var length = JSON.stringify(patientHistory.names.length);
-    console.log("data of the doctor" + length);
+    // console.log("data of the doctor" + length);
     var x;
     var y = length;
     // <th scope="col">#</th>
@@ -137,7 +137,7 @@ class portal extends Component {
     // <th scope="col">View Report</th>
     if (this.state.w === 0) {
       for (x = 0; x < length; x++) {
-        console.log("working in for loop" + this.state.tableName);
+        // console.log("working in for loop" + this.state.tableName);
         $("#patientHistory").prepend(
           `<tr><th scope="row">` +
             y +
@@ -179,17 +179,17 @@ class portal extends Component {
     var doc = sessionStorage.getItem("doctor");
     var docidd = JSON.parse(doc);
     var docid = docidd.data[0].CNIC;
-    console.log("this is for cnic" + docid);
+    // console.log("this is for cnic" + docid);
     var alldoctors = await allpat.allPat(docid);
     // var name=JSON.parse(alldoctors)
     var length = JSON.stringify(alldoctors.names.length);
-    console.log("data of the doctor" + length);
+    // console.log("data of the doctor" + length);
     var x;
     var y = length;
 
     if (this.state.v === 0) {
       for (x = 0; x < length; x++) {
-        console.log("working in for loop" + this.state.tableName);
+        // console.log("working in for loop" + this.state.tableName);
         $("#tabledata1").prepend(
           `<tr><th scope="row">` +
             y +
@@ -226,13 +226,13 @@ class portal extends Component {
     var alldoctors = await allpat.allPatdata();
     // var name=JSON.parse(alldoctors)
     var length = JSON.stringify(alldoctors.names.length);
-    console.log("data of the doctor" + length);
+    // console.log("data of the doctor" + length);
     var x;
     var y = length;
 
     if (this.state.v === 0) {
       for (x = 0; x < length; x++) {
-        console.log("working in for loop" + this.state.tableName);
+        // console.log("working in for loop" + this.state.tableName);
         $("#tabledata1").prepend(
           `<tr><th scope="row">` +
             y +
@@ -268,13 +268,13 @@ class portal extends Component {
     var alldoctors = await allDoc.allDoc();
     // var name=JSON.parse(alldoctors)
     var length = JSON.stringify(alldoctors.names.length);
-    console.log("data of the doctor" + length);
+    // console.log("data of the doctor" + length);
     var x;
     var y = length;
 
     if (this.state.v === 0) {
       for (x = 0; x < length; x++) {
-        console.log("working in for loop" + this.state.tableName);
+        // console.log("working in for loop" + this.state.tableName);
         $("#tabledata").prepend(
           `<tr><th scope="row">` +
             y +
@@ -307,31 +307,31 @@ class portal extends Component {
     //this.setState({ docname: alldoctors[1] });
   };
   viewReport() {
-    console.log("workig");
+    // console.log("workig");
     var x = document.getElementById("myBtn").name;
-    console.log("here is the name of the button " + x);
+    // console.log("here is the name of the button " + x);
   }
   _onAction(e) {
-    console.log("user did something", e);
+    // console.log("user did something", e);
     this.setState({ isTimedOut: false });
   }
 
   _onActive(e) {
-    console.log("user is active", e);
+    // console.log("user is active", e);
     this.setState({ isTimedOut: false });
   }
 
   _onIdle(e) {
-    console.log("user is idle", e);
+    // console.log("user is idle", e);
     const isTimedout = this.state.isTimedOut;
     if (isTimedout) {
-      console.log("in time out");
+      // console.log("in time out");
       setTimeout(() => this.setState({ navigate: 1 }), 20);
       Auth.logout();
       alert("you are login off to use system you have to Login Again");
     } else {
       // this.handleShow();
-      console.log("working in else");
+      // console.log("working in else");
       this.setState({ showModal: true });
 
       this.idleTimer.reset();
@@ -340,7 +340,7 @@ class portal extends Component {
   }
   render() {
     /*window.onload = () => {
-      console.log("working in on load");
+      // console.log("working in on load");
       // Clear localStorage
       Auth.logout();
     };*/
@@ -348,14 +348,14 @@ class portal extends Component {
     /*window.onbeforeunload = function (e) {
     window.onunload = function () {
             window.localStorage.isMySessionActive = "false";
-           console.log("working on onunload")
+           // console.log("working on onunload")
     }
     return undefined;
 };
 
 window.onload = function () {
             window.localStorage.isMySessionActive = "true";
-            console.log("on load")
+            // console.log("on load")
 };*/
 
     if (this.state.navigate === 1) {
@@ -418,10 +418,10 @@ window.onload = function () {
 
       $(".pathistory").on("click", function (e) {
         //e.preventDefault();
-        console.log("button is working brooooo");
+        // console.log("button is working brooooo");
         var x = $(this).val();
         localStorage.setItem("ReportID", x);
-        console.log("Here is the name of the buttibn    " + x);
+        // console.log("Here is the name of the buttibn    " + x);
 
         // window.open("8140262954341644.pdf");
       });

@@ -40,7 +40,7 @@ class FileUpload extends Component {
     isactive: false,
   };
   handlefile = (event) => {
-    console.log(event.target.files[0]);
+    // console.log(event.target.files[0]);
     this.setState({
       selectedFile: event.target.files[0],
     });
@@ -59,7 +59,7 @@ class FileUpload extends Component {
       var gify = "E:/FYPbackendalgo/brainSeg/BraTS19_WashU_W033_1.nii.gz";
       // $("#img-stripped").attr("src", "gif/waiting.gif");
 
-      console.log("working");
+      // console.log("working");
       // $("#imgInp").attr("src", respone.data.withskull);
 
       setTimeout(() => {
@@ -68,19 +68,19 @@ class FileUpload extends Component {
         this.setState({ allow: true });
         this.setState({ loading: false });
         this.setState({ isactive: false });
-        //console.log("hee is the link" + this.state.withoutskull);
+        //// console.log("hee is the link" + this.state.withoutskull);
         //var withskull = this.state.withskull;
 
-        // console.log("url is " + this.state.withoutskull);
+        // // console.log("url is " + this.state.withoutskull);
         $("#img-upload").attr("src", `img/bilal/withskull.gif`);
       }, 5000);
 
       // .then(() => setTimeout(() => this.setState({ navigate: true }), 2000))
       // .then(() => setTimeout(() => this.setState({ navigate: true }), 2000))
       /* .then( (Result) => {
-        console.log("message  : " + Result.message)
+        // console.log("message  : " + Result.message)
         if (Result.message === "skullStripped") {
-          console.log("working");
+          // console.log("working");
         }
       });*/
     }
@@ -104,7 +104,7 @@ class FileUpload extends Component {
   //         filedata,
   //         {
   //           onUploadProgress: (progressEvent) => {
-  //             console.log(
+  //             // console.log(
   //               "uploading" +
   //                 Math.round(
   //                   (progressEvent.loaded / progressEvent.total) * 100
@@ -115,30 +115,30 @@ class FileUpload extends Component {
   //         }
   //       )
   //       .then((respone) => {
-  //         console.log(respone.data.message);
+  //         // console.log(respone.data.message);
   //         if (respone.data.message === "skullStripped") {
-  //           console.log("working");
+  //           // console.log("working");
   //           // $("#imgInp").attr("src", respone.data.withskull);
   //           this.setState({ withoutskull: respone.data.withoutskull });
   //           this.setState({ withskull: respone.data.withskull });
   //           this.setState({ allow: true });
   //           this.setState({ loading: false });
   //           this.setState({ isactive: false });
-  //           console.log("hee is the link" + this.state.withoutskull);
+  //           // console.log("hee is the link" + this.state.withoutskull);
   //           var withskull = this.state.withskull;
 
-  //           console.log("url is " + this.state.withoutskull);
+  //           // console.log("url is " + this.state.withoutskull);
   //           $("#img-upload").attr("src", `${this.state.withskull}`);
   //         } else {
-  //           console.log("not working");
+  //           // console.log("not working");
   //         }
   //       });
   //     // .then(() => setTimeout(() => this.setState({ navigate: true }), 2000))
   //     // .then(() => setTimeout(() => this.setState({ navigate: true }), 2000))
   //     /* .then( (Result) => {
-  //       console.log("message  : " + Result.message)
+  //       // console.log("message  : " + Result.message)
   //       if (Result.message === "skullStripped") {
-  //         console.log("working");
+  //         // console.log("working");
   //       }
   //     });*/
   //   }

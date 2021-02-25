@@ -26,11 +26,11 @@ class Auth {
           this.authenticated = true;
           if (Result.role === "doctor") {
             sessionStorage.setItem("doctor", JSON.stringify(Result));
-            console.log("doctor Login successFully");
+            // console.log("doctor Login successFully");
             //this.setState({ auth: true });
             //this.setState({ role: 1 });
             this.role = 1;
-            // console.log("auth after login is ", this.state.auth);
+            // // console.log("auth after login is ", this.state.auth);
             //setTimeout(() => this.setState({ navigate: true }), 20);\
 
             setTimeout(() => (this.navigate = true), 20);
@@ -38,33 +38,33 @@ class Auth {
           } else if (Result.role === "Admin") {
             // localStorage.setItem("admin", JSON.stringify(Result));
             sessionStorage.setItem("admin", JSON.stringify(Result));
-            console.log("admin Login successFully");
+            // console.log("admin Login successFully");
             //this.props.history.push("/adminportal");
             //this.setState({ auth: true });
             //this.setState({ role: 2 });
             this.role = 2;
-            // console.log("auth after login is ", this.state.auth);
+            // // console.log("auth after login is ", this.state.auth);
             setTimeout(() => (this.navigate = true), 20);
-            console.log(sessionStorage.getItem("admin"));
+            // console.log(sessionStorage.getItem("admin"));
             var data = sessionStorage.getItem("admin");
             var data2 = JSON.parse(data);
             //var detials=JSON.parse( data2.data)
             var i = "";
             for (i in data2.data) {
-              console.log(data2.data[i].F_Name);
+              // console.log(data2.data[i].F_Name);
             }
           } else if (Result.role === "patient") {
             sessionStorage.setItem("patient", JSON.stringify(Result));
-            console.log("patient Login successFully");
+            // console.log("patient Login successFully");
             //this.setState({ auth: true });
             //this.setState({ role: 3 });
             this.role = 3;
-            // console.log("auth after login is ", this.state.auth);
+            // // console.log("auth after login is ", this.state.auth);
             setTimeout(() => (this.navigate = true), 20);
           }
-          //console.log("Login successFully");
+          //// console.log("Login successFully");
           //this.setState({ auth: true });
-          // console.log("auth after login is ", this.state.auth);
+          // // console.log("auth after login is ", this.state.auth);
           //setTimeout(() => this.setState({ navigate: true }), 20);
 
           //<Redirect to="/admin"/>;

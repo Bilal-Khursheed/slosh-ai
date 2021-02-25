@@ -20,10 +20,10 @@ app.get("/deleteDoctor", (req, res) => {
 
   //for user(patient)
   connection.query(deleteDoctor, (err, results) => {
-    console.log("length" + results.length);
+    // console.log("length" + results.length);
     if (err) {
       //will send error message if any
-      console.log("data not working");
+      // console.log("data not working");
       res.send(err);
     } else if (results.length === 0) {
       return res.json({

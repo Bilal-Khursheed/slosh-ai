@@ -51,12 +51,12 @@ class Contact extends Component {
   }
 
   handleSubmit = async (e) => {
-    console.log("name" + this.state.name);
-    console.log("email" + this.state.email);
+    // console.log("name" + this.state.name);
+    // console.log("email" + this.state.email);
     e.preventDefault();
     //this will assign these variable values from this.state
     const { name, email, phone, message } = this.state;
-    console.log("name after assigning" + name);
+    // console.log("name after assigning" + name);
     //this will send data to rest api then api will send mail with given data to admin
     const form = await axios.post("/api/form", {
       name,
@@ -97,7 +97,7 @@ class Contact extends Component {
                 >
                   <div className="row">
                     {fields.section.map((section, sectionIndex) => {
-                      console.log(
+                      // console.log(
                         "Rendering Section ",
                         sectionIndex,
                         "with",

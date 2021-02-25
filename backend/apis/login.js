@@ -10,19 +10,19 @@ app.get("/check", (req, res) => {
   //get this concept from mosh on youtube (restapi)
   //const email= req.query.email;
   const { email, pass } = req.query;
-  console.log(email, pass);
+  // console.log(email, pass);
   const checkdata = `SELECT * FROM bwgx3p22go7nsj8lsorn.doctor where email='${email}' and password='${pass}' and Status=1;`;
   connection.query(checkdata, (err, results) => {
     //this result will match the given id with database id to check result
     //const result = results.find((c) => c.status === 1 || c.status === true);
-    console.log("this is the doctor working");
+    // console.log("this is the doctor working");
     if (err) {
       //will send error message if any
       res.send(err);
     } else if (results.length === 0) {
       const checkdata = `SELECT * FROM bwgx3p22go7nsj8lsorn.adminp where email='${email}' and password='${pass}' and status=1;`;
       connection.query(checkdata, (err, results) => {
-        console.log("working in admin" + results.length);
+        // console.log("working in admin" + results.length);
 
         //this result will match the given id with database id to check result
         //const result = results.find((c) => c.status === 1 || c.status === true);
@@ -32,7 +32,7 @@ app.get("/check", (req, res) => {
         } else if (results.length == 0) {
           const checkdata = `SELECT * FROM bwgx3p22go7nsj8lsorn.patient where email='${email}' and password='${pass}'and Status=1;`;
           connection.query(checkdata, (err, results) => {
-            console.log("working in patient");
+            // console.log("working in patient");
             /* const result = results.find(
               (c) => c.status === 1 || c.status === true
             );*/

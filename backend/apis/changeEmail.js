@@ -9,9 +9,9 @@ app.use(cors());
 app.get("/changeEmail", (req, res) => {
   //get this concept from mosh on youtube (restapi)
   const { email, oldPassword, NewEmail, role } = req.query;
-  console.log("email" + email);
-  console.log("old pass working" + oldPassword);
-  console.log("role " + role);
+  // console.log("email" + email);
+  // console.log("old pass working" + oldPassword);
+  // console.log("role " + role);
 //DELETE FROM mid.patient WHERE Cnic = '';
   const verifyDoctor = `SELECT * FROM bwgx3p22go7nsj8lsorn.doctor where email='${email}' and password='${oldPassword}';`;
   const verifypatient = `SELECT * FROM bwgx3p22go7nsj8lsorn.patient where email='${email}' and password='${oldPassword}';`;
@@ -22,10 +22,10 @@ app.get("/changeEmail", (req, res) => {
   if (role == 1) {
     //for user(patient)
     connection.query(verifyAdmin, (err, results) => {
-      console.log("length" + results.length);
+      // console.log("length" + results.length);
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
         return res.json({
@@ -48,16 +48,16 @@ app.get("/changeEmail", (req, res) => {
       } // end of inner else if
     }); /// end of first query run
   } else if (role == 2) {
-    console.log("in doctor portal");
+    // console.log("in doctor portal");
     // for doctor
     connection.query(verifyDoctor, (err, results) => {
-      console.log("length" + results.length);
+      // console.log("length" + results.length);
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
-        console.log("user not verified");
+        // console.log("user not verified");
         return res.json({
           message: "The user is not verified",
           status: "Fail",
@@ -68,7 +68,7 @@ app.get("/changeEmail", (req, res) => {
             //will send error message if any
             res.send(err);
           } else {
-            console.log("user email chnaged");
+            // console.log("user email chnaged");
             return res.json({
               data: results,
               message: "The user password is changed",
@@ -81,10 +81,10 @@ app.get("/changeEmail", (req, res) => {
   } //end of else if outer
   else if (role == 3) {
     connection.query(verifypatient, (err, results) => {
-      console.log("length" + results.length);
+      // console.log("length" + results.length);
       if (err) {
         //will send error message if any
-        console.log("data not working");
+        // console.log("data not working");
         res.send(err);
       } else if (results.length === 0) {
         return res.json({

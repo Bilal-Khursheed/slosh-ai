@@ -17,21 +17,21 @@ class Login extends Component {
   }
   //i was doing this for private route purpose
   /*islogin = () => {
-    console.log("this is the auth for login", this.state.auth);
+    // console.log("this is the auth for login", this.state.auth);
     return this.state.auth;
   };*/
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(" login e value", e.target.value);
+    // console.log(" login e value", e.target.value);
   };
 
   handleSubmit = async (e) => {
-    console.log("name" + this.state.email);
-    console.log("email" + this.state.password);
+    // console.log("name" + this.state.email);
+    // console.log("email" + this.state.password);
     e.preventDefault();
     //this will assign these variable values from this.state
     const { email, password } = this.state;
-    console.log("name after assigning" + email);
+    // console.log("name after assigning" + email);
     //this will send data to rest api then api will send mail with given data to admin
     /*if (auth.login(email, password)) {
       if (auth.isAuthenticated) {
@@ -42,15 +42,15 @@ class Login extends Component {
     }*/
     /*if ((await auth.login()) === true) {
       if (auth.isnavigation === true) {
-        console.log("navigated");
+        // console.log("navigated");
         if (auth.isRole == 2) {
-          console.log(" roles i s gotted");
+          // console.log(" roles i s gotted");
           this.props.history.push("/adminportal");
         } else {
-          console.log("could not found role");
+          // console.log("could not found role");
         }
       } else if (auth.isnavigation === false) {
-        console.log("not nei");
+        // console.log("not nei");
       }
     }*/
     if (await auth.login(email, password)) {
@@ -58,20 +58,20 @@ class Login extends Component {
         this.setState({ auth: true });
         this.setState({ role: 1 });
 
-        // console.log("auth after login is ", this.state.auth);
+        // // console.log("auth after login is ", this.state.auth);
         setTimeout(() => this.setState({ navigate: true }), 20);
       } else if (sessionStorage.getItem("admin")) {
         this.setState({ auth: true });
         this.setState({ role: 2 });
 
-        // console.log("auth after login is ", this.state.auth);
+        // // console.log("auth after login is ", this.state.auth);
         setTimeout(() => this.setState({ navigate: true }), 20);
       } else if (sessionStorage.getItem("patient")) {
         this.setState({ auth: true });
         this.setState({ role: 3 });
-        console.log("patient role" + this.state.role)
+        // console.log("patient role" + this.state.role)
 
-        // console.log("auth after login is ", this.state.auth);
+        // // console.log("auth after login is ", this.state.auth);
         setTimeout(() => this.setState({ navigate: true }), 20);
       }
     }
@@ -94,14 +94,14 @@ class Login extends Component {
   //     })
   //     .then(result => {
   //       if (result.status === 200) {
-  //         console.log("login successfully");
+  //         // console.log("login successfully");
   //         //window.location = "/";
   //       } else {
-  //         console.log("login not accepted");
+  //         // console.log("login not accepted");
   //       }
   //     })
   //     .catch(e => {
-  //       console.log(e);
+  //       // console.log(e);
   //     });
   // };
 

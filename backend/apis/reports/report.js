@@ -16,10 +16,10 @@ app.get("/getReport", async (req, res) => {
   const getReport = `SELECT r.Report_ID, r.Dated, r.type, r.result,  CONCAT(p.F_Name, " ", p.L_Name) as pname,p.DOB, CONCAT(d.F_Name, " ", d.L_Name) as dname FROM bwgx3p22go7nsj8lsorn.report as r  INNER JOIN bwgx3p22go7nsj8lsorn.doctor as d  ON r.Doctor_ID=d.CNIC  INNER JOIN bwgx3p22go7nsj8lsorn.patient as p  ON r.Patient_ID=p.CNIC  where Report_ID='${Report_ID}';`;
   connection.query(getReport, (err, results) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
       res.send(err);
     } else  if(results.length !=0){
-      console.log("Report found");
+      // console.log("Report found");
       res.json({
         result: results,
         message: "found",
@@ -43,20 +43,20 @@ app.post("/addReport", async (req, res) => {
   const Patient_ID = req.body.Patient_ID;
   const type = req.body.type;
   const result = req.body.finalresult;
-  console.log(Report_ID);
-  console.log(Dated);
-  console.log(Time);
-  console.log(Doctor_ID);
-  console.log(Report_URL);
-  console.log(" here is the iud", Patient_ID);
+  // console.log(Report_ID);
+  // console.log(Dated);
+  // console.log(Time);
+  // console.log(Doctor_ID);
+  // console.log(Report_URL);
+  // console.log(" here is the iud", Patient_ID);
 
   const addReport = `INSERT INTO bwgx3p22go7nsj8lsorn.report(Report_ID, Dated, Time, Report_URL, Doctor_ID, Patient_ID, type, result) VALUES ('${Report_ID}', '${Dated}','${Time}', '${Report_URL}','${Doctor_ID}','${Patient_ID}','${type}','${result}');`;
   connection.query(addReport, (err, results) => {
     if (err) {
-      console.log(err);
+      // console.log(err);
       res.send(err);
     } else{
-      console.log("Report added");
+      // console.log("Report added");
       res.send("data added");
     }
   });

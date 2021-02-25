@@ -9,11 +9,11 @@ class PreReport extends Component {
   };
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(" login e value", e.target.value);
+    // console.log(" login e value", e.target.value);
   };
 
   handleSubmit = async (e) => {
-    console.log("cnic" + this.state.CNIC);
+    // console.log("cnic" + this.state.CNIC);
 
     e.preventDefault();
     //this will assign these variable values from this.state
@@ -33,7 +33,7 @@ class PreReport extends Component {
         }
       })
       .catch((err) => {
-        console.log(e);
+        // console.log(e);
       });
   };
 

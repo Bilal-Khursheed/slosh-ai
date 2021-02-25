@@ -12,7 +12,7 @@ app.get("/allPatient", (req, res) => {
   connection.query(allDoctor, (err, results) => {
     if (err) {
       //will send error message if any
-      console.log("data not working");
+      // console.log("data not working");
       res.send(err);
     } else if (results.length === 0) {
       return res.json({
@@ -33,7 +33,7 @@ app.get("/allPatients", (req, res) => {
   connection.query(allDoctor, (err, results) => {
     if (err) {
       //will send error message if any
-      console.log("data not working");
+      // console.log("data not working");
       res.send(err);
     } else if (results.length === 0) {
       return res.json({

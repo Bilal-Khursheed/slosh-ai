@@ -22,7 +22,7 @@ class GetAllDoc {
           address[j] += ", " + Result.data[i].State;
           address[j] += ", " + Result.data[i].Country;
           //address = Result.data[i].adress;Country
-          console.log(name[j], email[j], cnic[j]);
+          // console.log(name[j], email[j], cnic[j]);
           j++;
         }
         user = {
@@ -32,11 +32,11 @@ class GetAllDoc {
           address: address,
         };
 
-        //console.log("obj value" + user.email[1]);
+        //// console.log("obj value" + user.email[1]);
 
         //allData = Result;
       });
-    console.log("here is all data");
+    // console.log("here is all data");
     return user;
   }
   async allDocReq() {
@@ -62,7 +62,7 @@ class GetAllDoc {
           address[j] += ", " + Result.data[i].State;
           address[j] += ", " + Result.data[i].Country;
           //address = Result.data[i].adress;Country
-          console.log(name[j], email[j], cnic[j]);
+          // console.log(name[j], email[j], cnic[j]);
           j++;
         }
         user = {
@@ -72,11 +72,11 @@ class GetAllDoc {
           address: address,
         };
 
-        //console.log("obj value" + user.email[1]);
+        //// console.log("obj value" + user.email[1]);
 
         //allData = Result;
       });
-    console.log("here is all data");
+    // console.log("here is all data");
     return user;
   }
 }

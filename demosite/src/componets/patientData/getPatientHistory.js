@@ -6,7 +6,7 @@ class getPatientHistory {
     var Userdata = GetEmail.email();
     var cnic = Userdata[2];
     var role=Userdata[1];
-    console.log("emial is " + cnic);
+    // console.log("emial is " + cnic);
     await fetch(`/users/patientshistory?cnic=${cnic}&&role=${role}`)
       .then((respone) => respone.json())
       .then((Result) => {
@@ -34,11 +34,11 @@ class getPatientHistory {
           Report_URL: Report_URL,
         };
 
-        //console.log("obj value" + user.email[1]);
+        //// console.log("obj value" + user.email[1]);
 
         //allData = Result;
       });
-    console.log("here is all data");
+    // console.log("here is all data");
     return user;
   }
 }

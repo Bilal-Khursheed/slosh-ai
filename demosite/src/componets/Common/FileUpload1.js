@@ -41,7 +41,7 @@ class FileUpload1 extends Component {
     isactive: false,
   };
   handlefile = (event) => {
-    console.log(event.target.files[0]);
+    // console.log(event.target.files[0]);
     this.setState({
       selectedFile: event.target.files[0],
     });
@@ -77,7 +77,7 @@ class FileUpload1 extends Component {
             this.setState({ isactive: false });
             localStorage.setItem("result", this.state.result);
             var test = localStorage.getItem("result");
-            console.log("this is res" + test);
+            // console.log("this is res" + test);
             $(".invisible").addClass("visible").removeClass("invisible");
             $("#img-upload").attr("src", "converted/breast.jpg"); 
           }, 5000);
@@ -93,7 +93,7 @@ class FileUpload1 extends Component {
   //   await axios
   //     .post(`http://localhost:4003/`, filedata, {
   //       onUploadProgress: (progressEvent) => {
-  //         console.log(
+  //         // console.log(
   //           "uploading" +
   //             Math.round((progressEvent.loaded / progressEvent.total) * 100) +
   //             "%"
@@ -101,7 +101,7 @@ class FileUpload1 extends Component {
   //       },
   //     })
   //     .then((respone) => {
-  //       console.log(respone.data.message);
+  //       // console.log(respone.data.message);
   //       if (respone.data.message === "Working") {
   //         // this.setState({
   //         //   file:  URL.createObjectURL(this.state.selectedFile),
@@ -111,7 +111,7 @@ class FileUpload1 extends Component {
   //         this.setState({ isactive: false });
   //         localStorage.setItem("result", this.state.result);
   //         var test = localStorage.getItem("result");
-  //         console.log("this is res" + test);
+  //         // console.log("this is res" + test);
   //         $(".invisible").addClass("visible").removeClass("invisible");
   //         $("#img-upload").attr("src", "converted/breast.jpg"); //result
   //         // $("#result").addClass("text-danger");

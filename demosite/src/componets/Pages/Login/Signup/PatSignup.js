@@ -25,12 +25,12 @@ class PatSignup extends Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
-    console.log(" login e value", e.target.value);
+    // console.log(" login e value", e.target.value);
   };
 
   handleSubmit = async (e) => {
-    console.log("name" + this.state.F_Name);
-    console.log("email" + this.state.Email);
+    // console.log("name" + this.state.F_Name);
+    // console.log("email" + this.state.Email);
     e.preventDefault();
     //this will assign these variable values from this.state
     const {
@@ -50,7 +50,7 @@ class PatSignup extends Component {
       role,
       status,
     } = this.state;
-    console.log("name after assigning" + Email);
+    // console.log("name after assigning" + Email);
 
     //this will send data to rest api then api will send mail with given data to admin
     const form = await axios
@@ -73,13 +73,13 @@ class PatSignup extends Component {
       })
       .then((res) => {
         if (res.status === 200) {
-          console.log("your data in stored in database");
+          // console.log("your data in stored in database");
           alert("Thanks for you Registration! ");
           setTimeout(() => this.setState({ navigate: true }), 20);
         }
       })
       .catch((err) => {
-        console.log(e);
+        // console.log(e);
       });
   };
 
