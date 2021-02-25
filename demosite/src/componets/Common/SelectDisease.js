@@ -36,7 +36,7 @@ class SelectDisease extends Component {
                   style={{ backgroundImage: `url(img/disopt1.jpg)` }}
                 >
                   <div class="inner">
-                    <p>Breast Cancer</p>
+                    <p>Lung Cancer</p>
                   </div>
                 </div>
                 <div class="back">
