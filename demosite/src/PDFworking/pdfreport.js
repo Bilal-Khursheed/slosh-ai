@@ -133,14 +133,14 @@ class Report extends Component {
     var Dated = datetime;
     var Time = c_time;
 
-    // console.log(
-      "here is th edata",
-      Report_ID,
-      "sajk",
-      Doctor_ID,
-      "kjaso",
-      Patient_ID
-    );
+    // // console.log(
+    //   "here is th edata",
+    //   Report_ID,
+    //   "sajk",
+    //   Doctor_ID,
+    //   "kjaso",
+    //   Patient_ID
+    // );
     var Report_URL = Report_ID + ".pdf";
     var finalresult = "Tumor";
     var type = "Brain_Tumor";

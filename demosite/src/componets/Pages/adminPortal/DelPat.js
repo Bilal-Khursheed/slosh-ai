@@ -3,7 +3,7 @@ import Portal from '../../Common/portal'
 import Copyright from "../../Common/MIDWebsite/Copyright";
 import AdminInfo from "../../userInfo/GetData"
 
-class DelPat extends Component {
+export default class DelPat extends Component {
     render() {
         var data = sessionStorage.getItem("admin");
       var data2 = JSON.parse(data);
@@ -90,4 +90,4 @@ class DelPat extends Component {
          </div>
         )}}
 
-        export default DelPat;
+        }

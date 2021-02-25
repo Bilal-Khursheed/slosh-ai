@@ -93,5 +93,5 @@ class DocHistory extends Component {
          
          </div>
         )}}
-
+        }
         export default DocHistory;

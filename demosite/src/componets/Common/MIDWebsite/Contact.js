@@ -97,7 +97,7 @@ class Contact extends Component {
                 >
                   <div className="row">
                     {fields.section.map((section, sectionIndex) => {
-                      // console.log(
+                       console.log(
                         "Rendering Section ",
                         sectionIndex,
                         "with",

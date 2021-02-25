@@ -138,14 +138,7 @@ class Report extends Component {
     var type = this.state.type;
     var finalresult = res;
 
-    // console.log(
-      "here is th edata",
-      Report_ID,
-      "sajk",
-      Doctor_ID,
-      "kjaso",
-      Patient_ID
-    );
+ 
     var Report_URL = Report_ID + ".pdf";
     const form = await axios
       .post("/users/addReport", {
