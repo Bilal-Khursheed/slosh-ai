@@ -3,9 +3,9 @@ var mysql = require("mysql");
 // connect with the given mysql database
 //const connection = (async) => {
 var connection = mysql.createConnection({
-  host: "sql12.freemysqlhosting.net",
-  user: "bwgx3p22go7nsj8lsorn",
-  password: "vHMTdxdVPB",
+  host: "bwgx3p22go7nsj8lsorn-mysql.services.clever-cloud.com",
+  user: "uitobhtmxnvll63r",
+  password: "4sqhRdJ6RJzPG5onFix0",
   database: "bwgx3p22go7nsj8lsorn",
 });
 //check the connection with database
